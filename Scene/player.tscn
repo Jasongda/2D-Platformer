@@ -1,25 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://bifeidvqnl2bb"]
+[gd_scene load_steps=3 format=3 uid="uid://bifeidvqnl2bb"]
 
 [ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
-[ext_resource type="Script" path="res://Scene/player.gd" id="1_y8w33"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kelma"]
 height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_y8w33")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_kelma")
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13)
-shape = SubResource("CapsuleShape2D_y8w33")
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_kelma")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(14, -29)
+position = Vector2(-1, -33)
 zoom = Vector2(3, 3)
+limit_enabled = false
+limit_left = -100000
+limit_top = -100000
+limit_right = 100000
+limit_bottom = 100000
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
