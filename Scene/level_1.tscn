@@ -7,7 +7,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="BackgroundForest" type="Sprite2D" parent="."]
-position = Vector2(299, -137)
+position = Vector2(364, -102)
 texture = ExtResource("1_au1pm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
