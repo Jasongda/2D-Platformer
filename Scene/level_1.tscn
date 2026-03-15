@@ -1,53 +1,14 @@
-[gd_scene load_steps=12 format=4 uid="uid://d0emwf1mfh12k"]
+[gd_scene load_steps=8 format=4 uid="uid://d0emwf1mfh12k"]
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_8ko5r"]
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_au1pm"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_5exfe"]
-[ext_resource type="Script" uid="uid://b4ebm8lgfdesh" path="res://Scene/enemy.gd" id="4_poeaa"]
-[ext_resource type="Texture2D" uid="uid://cw8ve08co5tms" path="res://Sprites/Characters/character_0024.png" id="5_ufara"]
-[ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="6_ws63c"]
-[ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="7_3rcer"]
+[ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="4_6544n"]
+[ext_resource type="Texture2D" uid="uid://eaw0tcddq6vi" path="res://Sprites/Objects/tile_0151.png" id="5_poeaa"]
+[ext_resource type="Script" uid="uid://kno70xyr5ytc" path="res://Scene/coin.gd" id="5_ufara"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ws63c"]
-radius = 7.0
-
-[sub_resource type="Animation" id="Animation_2ceuy"]
-resource_name = "fly"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.26666668),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("5_ufara"), ExtResource("6_ws63c"), ExtResource("7_3rcer")]
-}
-
-[sub_resource type="Animation" id="Animation_246mo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_ufara")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sq6mb"]
-_data = {
-&"RESET": SubResource("Animation_246mo"),
-&"fly": SubResource("Animation_2ceuy")
-}
+[sub_resource type="CircleShape2D" id="CircleShape2D_poeaa"]
+radius = 6.0
 
 [node name="Main" type="Node2D"]
 
@@ -61,21 +22,28 @@ tile_set = ExtResource("1_8ko5r")
 
 [node name="Player" parent="." instance=ExtResource("3_5exfe")]
 
-[node name="Enemy" type="Area2D" parent="."]
-position = Vector2(55, 28)
-script = ExtResource("4_poeaa")
-move_direction = Vector2(0, -50)
+[node name="Enemy" parent="." instance=ExtResource("4_6544n")]
+position = Vector2(54, 21)
 
-[node name="Sprite" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("5_ufara")
+[node name="Enemy2" parent="." instance=ExtResource("4_6544n")]
+position = Vector2(162, 34)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-visible = false
-shape = SubResource("CircleShape2D_ws63c")
+[node name="Enemy3" parent="." instance=ExtResource("4_6544n")]
+position = Vector2(224, 65)
+move_direction = Vector2(0, -80)
+move_speed = 60.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
-libraries = {
-&"": SubResource("AnimationLibrary_sq6mb")
-}
+[node name="Enemy4" parent="." instance=ExtResource("4_6544n")]
+position = Vector2(298, 76)
+move_direction = Vector2(0, -80)
+move_speed = 70.0
 
-[connection signal="body_entered" from="Enemy" to="Enemy" method="_on_body_entered"]
+[node name="Coin" type="Area2D" parent="."]
+position = Vector2(25, -11)
+script = ExtResource("5_ufara")
+
+[node name="Sprite" type="Sprite2D" parent="Coin"]
+texture = ExtResource("5_poeaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin"]
+shape = SubResource("CircleShape2D_poeaa")
