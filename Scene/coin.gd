@@ -17,3 +17,9 @@ func _physics_process(_delta):
 	
 	var _y_pos = ((1 + sin(_time * bob_speed)) / 2) * bob_height
 	global_position.y = start_pos.y - _y_pos
+
+func _on_body_entered(body):
+	if not body.is_in_group("player"):
+		return
+	body._increase_score(1)
+	queue_free()
