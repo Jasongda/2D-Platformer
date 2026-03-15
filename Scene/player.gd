@@ -57,4 +57,5 @@ func _game_over():
 	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
 	
 func _increase_score(_amount : int):
-	print("increase score")
+	PlayerStats.score += _amount
+	print(PlayerStats.score)
