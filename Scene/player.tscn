@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bifeidvqnl2bb"]
+[gd_scene load_steps=13 format=3 uid="uid://bifeidvqnl2bb"]
 
 [ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scene/player.gd" id="1_y8w33"]
 [ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_xa75v"]
+[ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_58ae2"]
+[ext_resource type="Script" uid="uid://btlnm6dkqv0g6" path="res://Scene/player_ui.gd" id="4_ivevv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kelma"]
 height = 26.0
@@ -78,6 +80,11 @@ _data = {
 &"move": SubResource("Animation_ivevv")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_58ae2"]
+font_size = 38
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.5019608)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_y8w33")
 
@@ -105,3 +112,34 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_ivevv")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 6.0
+offset_right = 336.0
+offset_bottom = 74.0
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("4_58ae2")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("4_58ae2")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+layout_mode = 2
+texture = ExtResource("4_58ae2")
+expand_mode = 2
+
+[node name="ScoreText" type="Label" parent="CanvasLayer"]
+offset_left = 17.0
+offset_top = 84.0
+offset_right = 185.0
+offset_bottom = 161.0
+text = "Score: 500"
+label_settings = SubResource("LabelSettings_58ae2")
