@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bifeidvqnl2bb"]
+[gd_scene load_steps=14 format=3 uid="uid://bifeidvqnl2bb"]
 
 [ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scene/player.gd" id="1_y8w33"]
+[ext_resource type="Script" uid="uid://bgl67qkfplnbh" path="res://Scene/camera_shake.gd" id="3_r6jsd"]
 [ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_xa75v"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_58ae2"]
 [ext_resource type="Script" uid="uid://btlnm6dkqv0g6" path="res://Scene/player_ui.gd" id="4_ivevv"]
@@ -105,6 +106,7 @@ limit_left = -100000
 limit_top = -100000
 limit_right = 100000
 limit_bottom = 100000
+script = ExtResource("3_r6jsd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
