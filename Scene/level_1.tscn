@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://d0emwf1mfh12k"]
+[gd_scene load_steps=8 format=4 uid="uid://d0emwf1mfh12k"]
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_8ko5r"]
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_au1pm"]
+[ext_resource type="Script" uid="uid://dwlfplavoisia" path="res://Scene/background_parallax.gd" id="1_ws63c"]
 [ext_resource type="PackedScene" uid="uid://bifeidvqnl2bb" path="res://Scene/player.tscn" id="3_5exfe"]
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="4_6544n"]
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="5_poeaa"]
@@ -9,8 +10,32 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="BackgroundForest" type="Sprite2D" parent="."]
-position = Vector2(364, -102)
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_ws63c")
+
+[node name="BackgroundForest" type="Sprite2D" parent="Background"]
+position = Vector2(-3, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_au1pm")
+
+[node name="BackgroundForest2" type="Sprite2D" parent="Background"]
+position = Vector2(497, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_au1pm")
+
+[node name="BackgroundForest3" type="Sprite2D" parent="Background"]
+position = Vector2(1008, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_au1pm")
+
+[node name="BackgroundForest4" type="Sprite2D" parent="Background"]
+position = Vector2(-512, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_au1pm")
+
+[node name="BackgroundForest5" type="Sprite2D" parent="Background"]
+position = Vector2(-1024, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_au1pm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
