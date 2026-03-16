@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bpy0roa72yrje"]
+[gd_scene load_steps=9 format=4 uid="uid://bpy0roa72yrje"]
 
 [ext_resource type="Script" uid="uid://dwlfplavoisia" path="res://Scene/background_parallax.gd" id="1_43cbn"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_43cbn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crd5r1e5j60mf" path="res://Scene/coin.tscn" id="5_nwjwq"]
 [ext_resource type="PackedScene" uid="uid://7h60e8d1s6j1" path="res://Scene/enemy.tscn" id="6_67jix"]
 [ext_resource type="PackedScene" uid="uid://ct8w643aap2je" path="res://Scene/end_flag.tscn" id="7_f3pwq"]
+[ext_resource type="PackedScene" uid="uid://crkjh2wm7ddm2" path="res://Scene/menu.tscn" id="8_2thg8"]
 
 [node name="Main" type="Node2D"]
 
@@ -86,4 +87,4 @@ move_speed = 70.0
 
 [node name="EndFlag" parent="." instance=ExtResource("7_f3pwq")]
 position = Vector2(626, -27)
-scene_to_load = ExtResource("4_71r3i")
+scene_to_load = ExtResource("8_2thg8")
