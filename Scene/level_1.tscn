@@ -14,26 +14,31 @@
 script = ExtResource("1_ws63c")
 
 [node name="BackgroundForest" type="Sprite2D" parent="Background"]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-3, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_au1pm")
 
 [node name="BackgroundForest2" type="Sprite2D" parent="Background"]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(497, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_au1pm")
 
 [node name="BackgroundForest3" type="Sprite2D" parent="Background"]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(1008, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_au1pm")
 
 [node name="BackgroundForest4" type="Sprite2D" parent="Background"]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-512, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_au1pm")
 
 [node name="BackgroundForest5" type="Sprite2D" parent="Background"]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 position = Vector2(-1024, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_au1pm")
@@ -43,6 +48,7 @@ tile_map_data = PackedByteArray("AAD+/wAAAAACAAEAAAD//wAAAAACAAEAAAAAAAAAAAACAAE
 tile_set = ExtResource("1_8ko5r")
 
 [node name="Player" parent="." instance=ExtResource("3_5exfe")]
+modulate = Color(0.83137256, 1, 0.88235295, 1)
 
 [node name="Coins" type="Node" parent="."]
 
