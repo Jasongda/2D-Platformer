@@ -46,6 +46,7 @@ func _process(_delta):
 		
 	if global_position.y > 200:
 		_game_over()
+		PlayerStats.score = 0
 	
 	_manage_animation()
 	
@@ -65,6 +66,8 @@ func _take_damage(amount : int):
 	
 	if health <= 0:
 		call_deferred("_game_over")
+		PlayerStats.score = 0
+		
 		
 func _game_over():
 	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
