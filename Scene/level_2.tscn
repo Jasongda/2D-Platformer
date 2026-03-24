@@ -115,10 +115,12 @@ position = Vector2(1558, -28)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("6_67jix")]
-position = Vector2(76, 33)
+position = Vector2(73, 34)
+move_speed = 65.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("6_67jix")]
 position = Vector2(295, 20)
+move_speed = 75.0
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("6_67jix")]
 position = Vector2(278, -67)
@@ -126,12 +128,12 @@ move_direction = Vector2(300, 0)
 move_speed = 50.0
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource("6_67jix")]
-position = Vector2(708, -58)
+position = Vector2(702, -56)
 move_direction = Vector2(200, 0)
 move_speed = 80.0
 
 [node name="Enemy8" parent="Enemies" instance=ExtResource("6_67jix")]
-position = Vector2(943, -114)
+position = Vector2(868, -109)
 move_direction = Vector2(300, 0)
 move_speed = 70.0
 
@@ -143,22 +145,37 @@ move_speed = 70.0
 [node name="Enemy13" parent="Enemies" instance=ExtResource("6_67jix")]
 position = Vector2(1503, -60)
 move_direction = Vector2(300, 0)
-move_speed = 70.0
+move_speed = 90.0
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("6_67jix")]
 position = Vector2(520, 40)
 move_direction = Vector2(0, -80)
 move_speed = 70.0
 
+[node name="Enemy16" parent="Enemies" instance=ExtResource("6_67jix")]
+position = Vector2(443, 73)
+move_direction = Vector2(0, -80)
+move_speed = 70.0
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource("6_67jix")]
+position = Vector2(367, 81)
+move_direction = Vector2(0, -80)
+move_speed = 70.0
+
 [node name="Enemy6" parent="Enemies" instance=ExtResource("6_67jix")]
-position = Vector2(755, 40)
+position = Vector2(754, 56)
 move_direction = Vector2(0, -80)
 move_speed = 70.0
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource("6_67jix")]
-position = Vector2(808, 31)
+position = Vector2(809, 53)
 move_direction = Vector2(0, -80)
-move_speed = 70.0
+move_speed = 100.0
+
+[node name="Enemy15" parent="Enemies" instance=ExtResource("6_67jix")]
+position = Vector2(1423, 28)
+move_direction = Vector2(0, -100)
+move_speed = 100.0
 
 [node name="Enemy10" parent="Enemies" instance=ExtResource("6_67jix")]
 position = Vector2(1171, 26)
@@ -166,8 +183,8 @@ move_direction = Vector2(0, -80)
 move_speed = 70.0
 
 [node name="Enemy11" parent="Enemies" instance=ExtResource("6_67jix")]
-position = Vector2(1325, -6)
-move_direction = Vector2(0, -80)
+position = Vector2(1329, 3)
+move_direction = Vector2(0, -100)
 move_speed = 90.0
 
 [node name="Enemy14" parent="Enemies" instance=ExtResource("6_67jix")]
