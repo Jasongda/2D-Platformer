@@ -12,6 +12,7 @@ signal OnUpdateScore(score : int)
 @export var health : int = 3
 
 var 	move_input : float 
+var has_double_jumped : bool = false
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -23,6 +24,8 @@ var coin_sfx : AudioStream = preload("res://Audio/coin.wav")
 func _physics_process(_delta):
 	if not is_on_floor():
 		velocity.y += gravity * _delta 
+	else:
+		has_double_jumped = false
 	
 	move_input = Input.get_axis("move_left", "move_right")
 	
@@ -35,8 +38,12 @@ func _physics_process(_delta):
 		velocity.x = lerp(velocity.x, 0.0, braking * _delta)
 	
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_force
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = -jump_force
+		elif not has_double_jumped:
+					velocity.y = -jump_force
+					has_double_jumped = true
 	
 	move_and_slide()
 	
